@@ -10,13 +10,23 @@
     import Page from './components/Page'
     import Firebase from 'firebase'
 
+      
+          
+console.log(process.env.STEVE)
+console.log(process.env.VUE_APP_API_KEY)
+console.log(process.env.VUE_APP_DB_URL)
+console.log(process.env.VUE_APP_AUTH_DOMAIN)
+console.log(process.env.VUE_APP_PROJECT_ID)
+console.log(process.env.VUE_APP_STORAGE_BUCKET)
+console.log(process.env.VUE_APP_MESSAGING_SENDER_ID)
+
     var database = Firebase.initializeApp({
-      apiKey: 'AIzaSyBJ9GTol9kE4_-mr7cUHapEaStQhaFkkvE',
-      authDomain: 'notebook-690fa.firebaseapp.com',
-      databaseURL: 'https://notebook-690fa.firebaseio.com',
-      projectId: 'notebook-690fa',
-      storageBucket: 'notebook-690fa.appspot.com',
-      messagingSenderId: '335365073021'
+     apiKey: process.env.VUE_APP_API_KEY,
+     authDomain: process.env.VUE_APP_AUTH_DOMAIN,
+     databaseURL: process.env.VUE_APP_DB_URL,
+     projectId: process.env.VUE_APP_PROJECT_ID,
+     storageBucket: process.env.VUE_APP_STORAGE_BUCKET,
+     messagingSenderId: process.env.VUE_APP_MESSAGING_SENDER_ID
     }).database().ref();
 
     export default {
